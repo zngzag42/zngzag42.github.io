@@ -69,13 +69,14 @@ def copyOver(src, dst):
 
 def writeTOC(file, path, dirs, title, fDir, fName):
     tab = u"    "
-    file.write(u"<html>")
-    file.write(tab + u"<h1>" + title + u"</h1>")
-    file.write(tab + u"<ul>")
+    file.write(u"<html>" + u"\n")
+    file.write(u"<link rel=\"stylesheet\" href=\"simplestyle.css\">" + u"\n")
+    file.write(tab + u"<h1>" + title + u"</h1>" + u"\n")
+    file.write(tab + u"<ul>" + u"\n")
     for dir in dirs:
-        file.write(tab*2 + u"<li>" + u"<a href=\"./" + fDir(path, dir) + u"\">" + fName(path, dir) + u"</a>" + u"</li>")
-    file.write(tab + u"</ul>")
-    file.write(u"</html>")
+        file.write(tab*2 + u"<li>" + u"<a href=\"./" + fDir(path, dir) + u"\">" + fName(path, dir) + u"</a>" + u"</li>" + u"\n")
+    file.write(tab + u"</ul>" + u"\n")
+    file.write(u"</html>" + u"\n")
 
 
 
