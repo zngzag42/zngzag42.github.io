@@ -12,6 +12,7 @@ window.onload = function() {
     // header
     innerHTML +=
 '<a href="../toc.html" id="pageHeader">' + notebook['name'] + '</a>' +
+//'<p> page['name'] </p>' +
 '<div id="pageNumber">' +
 '<a href="' + (page['number'] > 1 ? '../' + (page['number'] - 1) + '/index.html' : '#') + '"><img id="prevPageButton" src="' + staticUrl + '/images/PreviousPageButton.png" /></a>' +
 '(' + page['number'] + '/' + notebook['pageCount'] + ')' +
