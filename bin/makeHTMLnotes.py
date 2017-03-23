@@ -32,7 +32,7 @@ def main(argv):
     print dirsUMD
 
     classes = open(outputdir + 'classes.html', 'w')
-    writeTOC(classes, outputdir, dirsUMD, 'Greenberg\'s Notes', lambda path, s: s + u"/toc.html", lambda path, s: s)
+    writeTOC(classes, outputdir, dirsUMD, 'Greenberg\'s Notes', lambda path, s: s + u"/toc.html", lambda path, s: s, "simplestyle.css", "", "")
 
     for dir in os.listdir(outputdir):
         dirpath = outputdir + dir
@@ -40,7 +40,7 @@ def main(argv):
             toc = codecs.open(dirpath + '/'  + 'toc.html', 'w', encoding='utf-8')
             pages = [page for page in os.listdir(dirpath) if page.isdigit()]
             pages.sort(key = int)
-            writeTOC(toc, dirpath, pages, dir, lambda path, s: s + u"/index.html", findPageTitle)
+            writeTOC(toc, dirpath, pages, dir, lambda path, s: s + u"/index.html", findPageTitle, "../simplestyle.css", "../classes.html", "Classes")
 
 def findPageTitle(path, dir):
     page = ET.parse(path + '/' + dir + '/'  + 'meta.xml').getroot()
@@ -94,11 +94,13 @@ def writeIndex(file):
     file.write("</body>")
     file.write("</html>")
 
-def writeTOC(file, path, dirs, title, fDir, fName):
+def writeTOC(file, path, dirs, title, fDir, fName, stylelink, backlink, backname):
     tab = u"    "
     file.write(u"<html>" + u"\n")
-    file.write(u"<link rel=\"stylesheet\" href=\"simplestyle.css\">" + u"\n")
+    file.write(u"<link rel=\"stylesheet\" href=\""+ stylelink + "\">" + u"\n")
     file.write(tab + u"<h1>" + title + u"</h1>" + u"\n")
+    if not(len(backlink) == 0):
+        file.write(tab + u"<a href=\"./" + backlink + u"\">" + backname + u"</a>" + u"\n")
     file.write(tab + u"<ul>" + u"\n")
     for dir in dirs:
         file.write(tab*2 + u"<li>" + u"<a href=\"./" + fDir(path, dir) + u"\">" + fName(path, dir) + u"</a>" + u"</li>" + u"\n")
