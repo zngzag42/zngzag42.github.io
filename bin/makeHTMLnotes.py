@@ -66,6 +66,33 @@ def copyOver(src, dst):
     if os.path.isdir(dst):
         shutil.rmtree(dst)
     shutil.copytree(src,dst)
+    for dirunder in os.listdir(dst):
+        pagepath = os.path.join(dst,dirunder)
+        if os.path.isdir(pagepath):
+            indexfile = open(os.path.join(dst,dirunder) + "/index.html", "w")
+            writeIndex(indexfile)
+
+def writeIndex(file):
+    tab = u"    "
+    file.write(u"<html>" + u"\n")
+    file.write(u"<head>" + u"\n")
+    file.write(tab + u"<meta name=\"viewport\" content=\"width=device-width/\" >" + u"\n")
+    file.write(tab + u"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>" + u"\n")
+    file.write(tab + u"<link rel=\"stylesheet\" type=\"text/css\" href=\"http://new.notesplusapp.com/static/css/page.css\" />" + u"\n")
+    file.write(tab + u"<script type=\"text/javascript\" src=\"../notebookInfo.js\"></script>" + u"\n")
+    file.write(tab + u"<script type=\"text/javascript\" src=\"../../page.js\"></script>" + u"\n")
+    file.write(tab + u"<script language=\"Javascript\">" + u"\n")
+    file.write(tab*2 + u"var page = {    'number' : 1," + u"\n")
+    file.write(tab*6 + u"'name' : 'Basic Notation'," + u"\n")
+    file.write(tab*6 + u"'width': 768," + u"\n")
+    file.write(tab*6 + u"'height': 1004," + u"\n")
+    file.write(tab*6 + u"'withPdfBackground' : false};" + u"\n")
+    file.write(tab + u"</script>" + u"\n")
+    file.write("</head>")
+    file.write("<body>")
+    file.write("<div id = \"wrapper\"></div>")
+    file.write("</body>")
+    file.write("</html>")
 
 def writeTOC(file, path, dirs, title, fDir, fName):
     tab = u"    "
