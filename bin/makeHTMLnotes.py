@@ -2,6 +2,7 @@
 import xml.etree.ElementTree as ET
 import sys, getopt, os, shutil
 import codecs
+import string
 
 def main(argv):
     inputdir = ''
@@ -71,14 +72,19 @@ def copyOver(src, dst):
         if os.path.isdir(pagepath):
             indexfile = open(os.path.join(dst,dirunder) + "/index.html", "r")
             outindexfile = open(os.path.join(dst,dirunder) + "/index.html.tmp", "w")
-            writeIndex(indexfile, outindexfile)
+            title = findPageTitle(dst,dirunder)
+            writeIndex(indexfile, outindexfile,title)
             os.rename(os.path.join(dst,dirunder) + "/index.html.tmp", os.path.join(dst,dirunder) + "/index.html")
 
-def writeIndex(infile, outfile):
+def writeIndex(infile, outfile,title):
     tab = u"    "
     for line in infile:
-        if line.find("page.js") > 0:
+        if line.find("page.js") >= 0:
             outfile.write(tab + u"<script type=\"text/javascript\" src=\"../../page.js\"></script>" + u"\n")
+        elif line.find("<head>") >= 0:
+            outfile.write(line)
+            titleline = tab + u"<title>" +  title +  u"</title>" + u"\n"
+            outfile.write(titleline.encode('utf-8'))
         else:
             outfile.write(line)
 
