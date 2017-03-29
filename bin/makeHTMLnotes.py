@@ -69,7 +69,7 @@ def copyOver(src, dst):
     shutil.copytree(src,dst)
     for dirunder in os.listdir(dst):
         pagepath = os.path.join(dst,dirunder)
-        if os.path.isdir(pagepath):
+        if os.path.isdir(pagepath) and os.path.isfile(os.path.join(dst,dirunder) + "/index.html"):
             indexfile = open(os.path.join(dst,dirunder) + "/index.html", "r")
             outindexfile = open(os.path.join(dst,dirunder) + "/index.html.tmp", "w")
             title = findPageTitle(dst,dirunder)
