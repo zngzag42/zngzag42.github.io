@@ -4,6 +4,7 @@ target:
 	git add *
 	git commit -m "Updated Webpage"
 	git push
+	git push publish
 
 test:
 	python bin/makeHTMLnotes.py -i ../Dropbox/NotesPlus/AutoBackup/Notebooks/ -o ./
