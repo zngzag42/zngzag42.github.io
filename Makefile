@@ -3,7 +3,7 @@ target:
 	-rm ./Makefile~
 	git add *
 	git commit -m "Updated Webpage"
-	git push publish
+	git push publish || true
 	git push
 
 
