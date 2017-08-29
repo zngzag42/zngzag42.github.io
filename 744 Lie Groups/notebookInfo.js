@@ -1,3 +1,3 @@
 var staticUrl = 'http://new.notesplusapp.com/static';
 var notebook = {'name' : '744 Lie Groups',
-                'pageCount' : 75 };
+                'pageCount' : 76 };
