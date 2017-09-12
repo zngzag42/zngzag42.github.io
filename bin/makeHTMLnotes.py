@@ -44,7 +44,10 @@ def main(argv):
             writeTOC(toc, dirpath, pages, dir, lambda path, s: s + u"/index.html", findPageTitle, "../simplestyle.css", "../classes.html", "Classes")
 
 def findPageTitle(path, dir):
-    page = ET.parse(path + '/' + dir + '/'  + 'meta.xml').getroot()
+    metaname = path + '/' + dir + '/'  + 'meta.xml'
+    if not(os.path.isfile(path)):
+        return u"Untitled"
+    page = ET.parse(metaname).getroot()
     name = page.get('name')
     if len(name) == 0:
         return u"Untitled"
