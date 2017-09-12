@@ -45,7 +45,8 @@ def main(argv):
 
 def findPageTitle(path, dir):
     metaname = path + '/' + dir + '/'  + 'meta.xml'
-    if not(os.path.isfile(path)):
+    if not(os.path.isfile(metaname)):
+        print "missing meta for " + dir
         return u"Untitled"
     page = ET.parse(metaname).getroot()
     name = page.get('name')
