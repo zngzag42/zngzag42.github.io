@@ -1,5 +1,8 @@
+#notesSource = ../Dropbox/NotesPlus/AutoBackup/Notebooks/
+notesSource = ~/Library/Mobile\ Documents/iCloud~com~viettran~NotePlus/Documents/Notebooks/
+
 target:
-	python bin/makeHTMLnotes.py -i ../Dropbox/NotesPlus/AutoBackup/Notebooks/ -o ./
+	python bin/makeHTMLnotes.py -i $(notesSource) -o ./
 	-rm ./Makefile~ || true
 	git add *
 	git commit -m "Updated Webpage"
@@ -8,4 +11,4 @@ target:
 
 
 test:
-	python bin/makeHTMLnotes.py -i ../Dropbox/NotesPlus/AutoBackup/Notebooks/ -o ./
+	python bin/makeHTMLnotes.py -i $(notesSource) -o ./

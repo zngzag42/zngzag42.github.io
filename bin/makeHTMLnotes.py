@@ -30,7 +30,7 @@ def main(argv):
     dirsUMD = [dir for sublist in dirsUMD for dir in sublist]
     dirsUMD.sort();
 
-    print dirsUMD
+#    print dirsUMD
 
     classes = open(outputdir + 'classes.html', 'w')
     writeTOC(classes, outputdir, dirsUMD, 'Greenberg\'s Notes', lambda path, s: s + u"/toc.html", lambda path, s: s, "simplestyle.css", "", "")
@@ -46,7 +46,7 @@ def main(argv):
 def findPageTitle(path, dir):
     metaname = path + '/' + dir + '/'  + 'meta.xml'
     if not(os.path.isfile(metaname)):
-        print "missing meta for " + dir
+        print "missing meta for " + metaname
         return u"Untitled"
     page = ET.parse(metaname).getroot()
     name = page.get('name')
@@ -67,18 +67,19 @@ def expandDirAndMove(prefix, dir, outdir):
         return [dir]
 
 def copyOver(src, dst):
-    print 'Trying to copy to ' + dst
     if os.path.isdir(dst):
         shutil.rmtree(dst)
-    shutil.copytree(src,dst)
-    for dirunder in os.listdir(dst):
-        pagepath = os.path.join(dst,dirunder)
-        if os.path.isdir(pagepath) and os.path.isfile(os.path.join(dst,dirunder) + "/index.html"):
-            indexfile = open(os.path.join(dst,dirunder) + "/index.html", "r")
-            outindexfile = open(os.path.join(dst,dirunder) + "/index.html.tmp", "w")
-            title = findPageTitle(dst,dirunder)
-            writeIndex(indexfile, outindexfile,title)
-            os.rename(os.path.join(dst,dirunder) + "/index.html.tmp", os.path.join(dst,dirunder) + "/index.html")
+    if os.path.isdir(src):
+        print 'Trying to copy to ' + src
+        shutil.copytree(src,dst)
+        for dirunder in os.listdir(dst):
+            pagepath = os.path.join(dst,dirunder)
+            if os.path.isdir(pagepath) and os.path.isfile(os.path.join(dst,dirunder) + "/index.html"):
+                indexfile = open(os.path.join(dst,dirunder) + "/index.html", "r")
+                outindexfile = open(os.path.join(dst,dirunder) + "/index.html.tmp", "w")
+                title = findPageTitle(dst,dirunder)
+                writeIndex(indexfile, outindexfile,title)
+                os.rename(os.path.join(dst,dirunder) + "/index.html.tmp", os.path.join(dst,dirunder) + "/index.html")
 
 def writeIndex(infile, outfile,title):
     tab = u"    "
