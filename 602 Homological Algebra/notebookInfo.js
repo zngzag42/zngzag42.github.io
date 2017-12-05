@@ -1,3 +1,3 @@
 var staticUrl = 'http://new.notesplusapp.com/static';
 var notebook = {'name' : '602 Homological Algebra',
-                'pageCount' : 57 };
+                'pageCount' : 63 };
