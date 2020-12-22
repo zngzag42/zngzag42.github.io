@@ -1,25 +1,31 @@
 <html>
 <head>
  <title> Cluster Complex for gr25</title>
- </head>
+ <link rel="stylesheet" href="../style.css"> </head>
 <script src="../clusterNavigate.js"> </script>
-   <h1>gr25</h1>
-   <div style:"height:500px">
-   <img id="embeded" src="graph.png" alt="Complex embeded in larger subalgebra" style= "height:400px" />
-   <img id="focused" src="graph.png" alt="Cluster Complex for gr25" style="height:400px" >
-   </div>
+   <div style="height:10%"> <h1>gr25</h1> </div>
+<div style="height:60%">
+   <img id="embeded" src="graph.png" alt="Complex embeded in larger subalgebra" style= "height:100%" />
+   <img id="focused" src="graph.png" alt="Cluster Complex for gr25" style="height:100%" >
+</div>
 
+<div style="height:30%;overflow:auto">
    <h2> Subalgebras </h2>
    <h3>A1</h3>
    <div>
-      <button type="button" onclick="focusSubalgebra('graph_embeded_1_A1_p13.png','graph_focused_1_A1_p13.png')">A1 p13</button>
-      <button type="button" onclick="focusSubalgebra('graph_embeded_1_A1_p14.png','graph_focused_1_A1_p14.png')">A1 p14</button>
-      <button type="button" onclick="focusSubalgebra('graph_embeded_1_A1_p24.png','graph_focused_1_A1_p24.png')">A1 p24</button>
-      <button type="button" onclick="focusSubalgebra('graph_embeded_1_A1_p25.png','graph_focused_1_A1_p25.png')">A1 p25</button>
-      <button type="button" onclick="focusSubalgebra('graph_embeded_1_A1_p35.png','graph_focused_1_A1_p35.png')">A1 p35</button>
+      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_1_A1_p13.png','graph_focused_1_A1_p13.png')">A1 p13</input></div>
+      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_1_A1_p14.png','graph_focused_1_A1_p14.png')">A1 p14</input></div>
+      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_1_A1_p24.png','graph_focused_1_A1_p24.png')">A1 p24</input></div>
+      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_1_A1_p25.png','graph_focused_1_A1_p25.png')">A1 p25</input></div>
+      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_1_A1_p35.png','graph_focused_1_A1_p35.png')">A1 p35</input></div>
    </div>
    <h2> Quiver Isomorphism Classes </h2>
    <div>
-      <button type="button" onclick="focusSubalgebra('graph_isoClass_0.png','quiver_isoClass_0.png')">Isomorphism Class 0</button>
+      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_isoClass_0.png','quiver_isoClass_0.png')">Isomorphism Class 0</input></div>
    </div>
+   <h2> Orbits of X-Coordinates </h2>
+   <div>
+      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_xorbit_x1234.png','xorbit_x1234.png')">x1234</input></div>
+   </div>
+</div>
 </html>
