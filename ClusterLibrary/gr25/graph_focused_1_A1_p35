@@ -1,0 +1,6 @@
+strict graph G {
+    "13" [color = "#000000", penwidth = 5, label = "p13"];
+    "25" [color = "#000000", penwidth = 5, label = "p25"];
+    "13" -- "25" [len = 3.0, color = "#000000"];
+    "25" -- "13" [len = 3.0, color = "#000000"];
+}
