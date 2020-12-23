@@ -10,5 +10,11 @@ target:
 	git push
 
 
+publish:
+	git add *
+	git commit -m "Updated Webpage"
+	git push publish || true
+	git push
+
 test:
 	python bin/makeHTMLnotes.py -i $(notesSource) -o ./
