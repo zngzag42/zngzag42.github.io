@@ -4,6 +4,11 @@ div.radio
     padding:0px 10px 0px;
 }
 
+div.clear
+{
+    clear:left;
+}
+
 h2
 {
     clear:left;
