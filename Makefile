@@ -6,14 +6,12 @@ target:
 	-rm ./Makefile~ || true
 	git add *
 	git commit -m "Updated Webpage"
-	git push heidelberg || true
 	git push
 
 
 publish:
 	git add *
 	git commit -m "Updated Webpage"
-	git push heidelberg || true
 	git push
 
 test:
