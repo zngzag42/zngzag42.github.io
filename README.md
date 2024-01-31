@@ -4,4 +4,4 @@ This is my personal website. It includes my research interests, papers, cluster 
 
 ### Who do I talk to? ###
 
-Zachary Greenberg (zgreenberg(AT)mathi(DOT)uni-heidelberg(DOT)de
+Zachary Greenberg (greenberg@mis.mpg.de)
