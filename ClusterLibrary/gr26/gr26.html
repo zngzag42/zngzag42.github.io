@@ -1,34 +1,31 @@
 <html>
 <head>
- <title> Cluster Complex for gr26</title>
+ <title> Cluster Complex for Gr(2,6)</title>
  <link rel="stylesheet" href="../style.css"> </head>
 <script src="../clusterNavigate.js"> </script>
    <div style="height:15%">
-      <h1>gr26</h1>
+      <h1>Gr(2,6)</h1>
       <a href="../index.html">back </a>
     </div>
 <div style="height:55%;overflow-y:hidden;overflow-x:auto;width=100%;white-space:nowrap">
    <img id="embeded" src="graph.png" alt="Complex embeded in larger subalgebra" style= "height:100%" />
-   <img id="focused" src="graph.png" alt="Cluster Complex for gr26" style="height:100%" >
+   <img id="focused" src="../empty.png" alt="Cluster Complex for html" style="height:100%" >
 </div>
 
 <div style="height:30%;overflow:auto">
-   <h2> Subalgebras </h2>
-   <h3>A2</h3>
-   <div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_2_A2_p13.png','graph_focused_2_A2_p13.png')">A2 p13</input></div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_2_A2_p15.png','graph_focused_2_A2_p15.png')">A2 p15</input></div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_2_A2_p24.png','graph_focused_2_A2_p24.png')">A2 p24</input></div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_2_A2_p26.png','graph_focused_2_A2_p26.png')">A2 p26</input></div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_2_A2_p35.png','graph_focused_2_A2_p35.png')">A2 p35</input></div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_2_A2_p46.png','graph_focused_2_A2_p46.png')">A2 p46</input></div>
+   <h2> Coordinates </h2> <button type="button" onclick="resetFocus()">Reset</button>
+   <div id="coordCheckbox">
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="p13_p24 p25 p26"id = "p13"><label for = "p13">p13</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="p14_p25 p26 p35 p36"id = "p14"><label for = "p14">p14</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="p15_p26 p36 p46"id = "p15"><label for = "p15">p15</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="p24_p13 p35 p36"id = "p24"><label for = "p24">p24</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="p25_p13 p14 p36 p46"id = "p25"><label for = "p25">p25</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="p26_p13 p14 p15"id = "p26"><label for = "p26">p26</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="p35_p14 p24 p46"id = "p35"><label for = "p35">p35</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="p36_p14 p15 p24 p25"id = "p36"><label for = "p36">p36</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="p46_p15 p25 p35"id = "p46"><label for = "p46">p46</label></input>
    </div>
-   <h3>A1xA1</h3>
-   <div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_2_A1xA1_p14.png','graph_focused_2_A1xA1_p14.png')">A1xA1 p14</input></div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_2_A1xA1_p25.png','graph_focused_2_A1xA1_p25.png')">A1xA1 p25</input></div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_embeded_2_A1xA1_p36.png','graph_focused_2_A1xA1_p36.png')">A1xA1 p36</input></div>
-   </div>
+
    <h2> Quiver Isomorphism Classes </h2>
    <div class="clear">
       <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_isoClass_0_0.png','quiver_isoClass_0_0.png')">Isomorphism Class 1 1</input></div>
