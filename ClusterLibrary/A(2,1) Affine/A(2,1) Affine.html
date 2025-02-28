@@ -8,11 +8,34 @@
       <a href="../index.html">back </a>
     </div>
 <div style="height:55%;overflow-y:hidden;overflow-x:auto;width=100%;white-space:nowrap">
-   <img id="embeded" src="graph.png" alt="Complex embeded in larger subalgebra" style= "height:100%" />
-   <img id="focused" src="../empty.png" alt="Cluster Complex for A(2,1) Affine" style="height:100%" >
+   <img id="embeded" src="graph_embeded_.png" alt="Complex embeded in larger subalgebra" style= "height:100%" />
+   <img id="focused" src="graph_focused_.png" alt="Cluster Complex for A2_12" style="height:100%" >
 </div>
 
 <div style="height:30%;overflow:auto">
+     <h2> Coordinates </h2>
+   <button type="button" onclick="resetFocus()">Reset</button>
+   <div id="coordCheckbox">
+     <div id="coordCheckbox">
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="o00_o11 c10w-2 c10w-1 c10w0 c10w1 c10w2"id = "o00"><label for = "o00">o00</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="o11_o00 c00w-2 c00w-1 c00w0 c00w1 c00w2"id = "o11"><label for = "o11">o11</label></input>
+     </div>
+     <div id="coordCheckbox">
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="c00w-2_o11 c00w0 c00w1 c00w2 c10w-1 c10w0 c10w1 c10w2"id = "c00w-2"><label for = "c00w-2">c00w-2</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="c00w-1_o11 c00w1 c00w2 c10w0 c10w1 c10w2"id = "c00w-1"><label for = "c00w-1">c00w-1</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="c00w0_o11 c00w-2 c00w2 c10w-2 c10w1 c10w2"id = "c00w0"><label for = "c00w0">c00w0</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="c00w1_o11 c00w-2 c00w-1 c10w-2 c10w-1 c10w2"id = "c00w1"><label for = "c00w1">c00w1</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="c00w2_o11 c00w-2 c00w-1 c00w0 c10w-2 c10w-1 c10w0"id = "c00w2"><label for = "c00w2">c00w2</label></input>
+     </div>
+     <div id="coordCheckbox">
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="c10w-2_o00 c00w0 c00w1 c00w2 c10w0 c10w1 c10w2"id = "c10w-2"><label for = "c10w-2">c10w-2</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="c10w-1_o00 c00w-2 c00w1 c00w2 c10w1 c10w2"id = "c10w-1"><label for = "c10w-1">c10w-1</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="c10w0_o00 c00w-2 c00w-1 c00w2 c10w-2 c10w2"id = "c10w0"><label for = "c10w0">c10w0</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="c10w1_o00 c00w-2 c00w-1 c00w0 c10w-2 c10w-1"id = "c10w1"><label for = "c10w1">c10w1</label></input>
+      <input type="checkbox" name="vertex" onChange="updateFocus(this.value)" value="c10w2_o00 c00w-2 c00w-1 c00w0 c00w1 c10w-2 c10w-1 c10w0"id = "c10w2"><label for = "c10w2">c10w2</label></input>
+      </div>
+   </div>
+
    <h2> Subalgebras </h2>
    <h3>A2</h3>
    <div>
@@ -38,15 +61,6 @@
    </div>
    <div class="clear">
       <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_isoClass_1_0.png','quiver_isoClass_1_0.png')">Isomorphism Class 2 1</input></div>
-   </div>
-   <h2> Orbits of X-Coordinates </h2>
-   <div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_xorbit_i00w1*o00w1_c00w0*c00w0.png','xorbit_i00w1*o00w1_c00w0*c00w0.png')">(i00w1*o00w1)/(c00w0*c00w0)</input></div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_xorbit_i01w0*c00w1_i01w1*c00w0.png','xorbit_i01w0*c00w1_i01w1*c00w0.png')">(i01w0*c00w1)/(i01w1*c00w0)</input></div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_xorbit_i01w0*c10w0_i01w1*c10w1.png','xorbit_i01w0*c10w0_i01w1*c10w1.png')">(i01w0*c10w0)/(i01w1*c10w1)</input></div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_xorbit_i01w0*o00w1_c00w1*c10w0.png','xorbit_i01w0*o00w1_c00w1*c10w0.png')">(i01w0*o00w1)/(c00w1*c10w0)</input></div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_xorbit_i01w1*o00w1_c00w0*c10w0.png','xorbit_i01w1*o00w1_c00w0*c10w0.png')">(i01w1*o00w1)/(c00w0*c10w0)</input></div>
-      <div class="radio"><input type="radio" name="focus" onclick="focusSubalgebra('graph_xorbit_i11w1*o00w1_c10w0*c10w0.png','xorbit_i11w1*o00w1_c10w0*c10w0.png')">(i11w1*o00w1)/(c10w0*c10w0)</input></div>
    </div>
 </div>
 </html>
